@@ -2,13 +2,23 @@ import 'cliente.dart';
 
 class ContaCorrente {
   Cliente? titular;
-  int agencia = 145;
+  int _agencia = 145;
+  int get agencia => _agencia;
+  set agencia(int novaAgencia) => {_agencia = novaAgencia};
   int? conta;
-  double saldo = 20.0;
+  double _saldo = 20.0;
   double chequeEspecial = -100.0;
 
+  double get saldo {
+    return _saldo;
+  }
+
+  set saldo(double novoSaldo) {
+    _saldo = novoSaldo;
+  }
+
   bool verificaSaldo(double valor) {
-    if (saldo - valor < chequeEspecial) {
+    if (_saldo - valor < chequeEspecial) {
       print('Sem saldo suficiente.');
       return false;
     } else {
@@ -21,8 +31,8 @@ class ContaCorrente {
     if (!verificaSaldo(valor)) {
       return false;
     } else {
-      saldo -= valor;
-      contaDestino.saldo += valor;
+      _saldo -= valor;
+      contaDestino._saldo += valor;
       return true;
     }
   }

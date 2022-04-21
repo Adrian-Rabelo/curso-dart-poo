@@ -9,6 +9,7 @@ void main() {
   cliente.profissao = 'Programadora Dart';
 
   contaDaAmanda.titular = cliente;
+  contaDaAmanda.saldo = -101;
 
   print('Titular: ${contaDaAmanda.titular?.nome}');
   print('Saldo: ${contaDaAmanda.saldo}');
