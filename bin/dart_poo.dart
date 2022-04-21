@@ -1,21 +1,26 @@
 void main() {
-  ContaCorrente conta = ContaCorrente();
-  conta.titular = 'Gabriel';
-  conta.agencia = 123;
-  conta.conta = 1234;
-  conta.saldo = 150.0;
+  ContaCorrente contaDaAmanda = ContaCorrente();
+  Cliente cliente = Cliente();
+  cliente.nome = 'Amanda';
+  cliente.cpf = '123.456.789-90';
+  cliente.profissao = 'Programadora Dart';
 
-  print('Titular: ${conta.titular}');
-  print('Agência: ${conta.agencia}');
-  print('Conta: ${conta.conta}');
-  print('Saldo: ${conta.saldo}');
+  contaDaAmanda.titular = cliente;
+
+  print('Titular: ${contaDaAmanda.titular?.nome}');
+  print('Saldo: ${contaDaAmanda.saldo}');
+}
+
+class Cliente {
+  String? nome;
+  String? cpf;
+  String? profissao;
 }
 
 class ContaCorrente {
-
-  late String titular;
-  late int agencia;
-  late int conta;
-  late double saldo;
-
+  Cliente? titular;
+  int agencia = 145;
+  int? conta;
+  double saldo = 20.0;
+  double chequeEspecial = -100.0;
 }
