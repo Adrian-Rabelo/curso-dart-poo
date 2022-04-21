@@ -1,10 +1,20 @@
 import 'cliente.dart';
 
 class ContaCorrente {
+  ContaCorrente(int novaAgencia, this.conta) {
+    if (novaAgencia > 0) _agencia = novaAgencia;
+    totalContaCorrente++;
+  }
+
+  static int totalContaCorrente = 0;
+
   Cliente? titular;
   int _agencia = 145;
   int get agencia => _agencia;
-  set agencia(int novaAgencia) => {_agencia = novaAgencia};
+  set agencia(int novaAgencia) {
+    if (novaAgencia > 0) _agencia = novaAgencia;
+  }
+
   int? conta;
   double _saldo = 20.0;
   double chequeEspecial = -100.0;
