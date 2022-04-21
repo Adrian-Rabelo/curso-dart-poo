@@ -12,4 +12,14 @@ void main() {
 
   print('Titular: ${contaDaAmanda.titular?.nome}');
   print('Saldo: ${contaDaAmanda.saldo}');
+
+  Cliente tiago = Cliente()
+    ..nome = 'Tiago'
+    ..cpf = '132.456.789.00'
+    ..profissao = 'Programador Dart';
+  ContaCorrente contaTiago = ContaCorrente();
+  contaTiago.titular = tiago;
+  print('Titular: ${contaTiago.titular?.nome}');
+  print('CPF: ${contaTiago.titular?.cpf}');
+  print('Profissão: ${contaTiago.titular?.profissao}');
 }
